@@ -8,10 +8,10 @@ spring:
   thymeleaf:
     cache: false
   datasource:
-    url:  jdbc:mysql://10.110.13.56:3306/test
-    username: root
-    password: root
-    driver-class-name : com.mysql.jdbc.Driver
+    url:  jdbc:postgresql://172.16.0.200:8888/aia_test
+    username: aia
+    password: aia
+    driver-class-name : org.postgresql.Driver
   mybatis:
     type-Aliases-Package: com.learning.userRegister.model
     mapperLocations: classpath*:mapping/*.xml
