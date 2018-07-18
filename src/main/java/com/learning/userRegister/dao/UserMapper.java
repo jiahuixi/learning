@@ -2,11 +2,12 @@ package com.learning.userRegister.dao;
 
 
 import com.learning.userRegister.model.User;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
-@Mapper
-@Component(value = "userMapper")
+//@Mapper
+
+
+@Component
 public interface UserMapper {
     int deleteByPrimaryKey(Integer userId);
 
@@ -16,6 +17,7 @@ public interface UserMapper {
 
     //@Select("SELECT * FROM t_user WHERE user_id = #{userId}")
     User selectByPrimaryKey(Integer userId);
+
 
     int updateByPrimaryKeySelective(User record);
 

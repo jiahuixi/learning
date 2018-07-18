@@ -12,9 +12,9 @@ spring:
     username: aia
     password: aia
     driver-class-name : org.postgresql.Driver
-  mybatis:
-    type-Aliases-Package: com.learning.userRegister.model
-    mapperLocations: classpath*:mapping/*.xml
+mybatis:
+  type-Aliases-Package: com.learning.userRegister.model
+  mapper-locations: classpath*:mapping/*.xml
 logging:
   level:
     com.learning.userRegister.dao : debug

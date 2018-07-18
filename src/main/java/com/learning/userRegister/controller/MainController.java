@@ -26,6 +26,7 @@ public class MainController {
 	@ResponseBody
 	public String  index() {
 		User user = userService.selectByPrimaryKey(1);
-		return user.toString();
+        System.out.println(user.toString());
+		return "success";
 	}
 }
