@@ -1,5 +1,6 @@
 package com.learning.userRegister.controller;
 
+import com.learning.userRegister.dao.RedisDao;
 import com.learning.userRegister.model.User;
 import com.learning.userRegister.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import java.util.HashMap;
 public class MainController {
 	@Autowired
 	UserService userService;
+	@Autowired
+	RedisDao redisDao;
 	@RequestMapping("/index")
 	public String index(HashMap<String, Object> map) {
         //获取配置文件中的信息vv
@@ -25,6 +28,12 @@ public class MainController {
 	@RequestMapping("/test")
 	@ResponseBody
 	public String  index() {
+		//redis
+		redisDao.setKey("name","forezp");
+		redisDao.setKey("age","11");
+		System.out.println(redisDao.getValue("name"));
+		System.out.println(redisDao.getValue("age"));
+		//mybatis
 		User user = userService.selectByPrimaryKey(1);
         System.out.println(user.toString());
 		return "success";

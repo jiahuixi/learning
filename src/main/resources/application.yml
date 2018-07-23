@@ -1,6 +1,19 @@
 server:
     port: 8088
 spring:
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 1
+    timeout: 5000
+#    cluster:
+#      nodes: 127.0.0.1:6379,192.168.177.128:7002
+    pool:
+      max-active: 8
+      max-wait: 1
+      max-idle: 500
+      min-idle: 0
   mvc:
     static-path-pattern: /**
   resources:
